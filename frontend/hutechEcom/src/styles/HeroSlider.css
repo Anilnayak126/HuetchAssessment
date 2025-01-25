@@ -1,91 +1,130 @@
 /* Hero Slider Styles */
-.hero-slider {
-    position: relative;
-    width: 100%;
-    height: 500px;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #333; /* Add a fallback background color */
-   
-  }
-  
-  .slider-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0;
-    animation: fadeIn 3s ease-in-out infinite;
-  }
-  
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    50% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-    }
-  }
-  
-  .slider-overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: white;
-    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
-    z-index: 10;
-    background: rgba(0, 0, 0, 0.4); /* Transparent black overlay */
-    padding: 20px;
-    border-radius: 8px; /* Modern rounded edges */
-  }
-  
+.hero-slider-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.slider-overlay {
+  text-align: center;
+  color: white;
+  max-width: 800px;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+}
+
+.slider-overlay h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.slider-overlay p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.primary-btn, .secondary-btn {
+  padding: 12px 24px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.primary-btn {
+  background-color: #ff6f61;
+  color: white;
+}
+
+.primary-btn:hover {
+  background-color: #e05549;
+  transform: scale(1.05);
+}
+
+.secondary-btn {
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+.secondary-btn:hover {
+  background-color: rgba(255,255,255,0.2);
+  transform: scale(1.05);
+}
+
+.slider-indicators {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.indicator {
+  width: 10px;
+  height: 10px;
+  background-color: rgba(255,255,255,0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.indicator.active {
+  background-color: white;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
   .slider-overlay h1 {
-    font-size: 3rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin-bottom: 1rem;
-    font-weight: bold;
+    font-size: 2.5rem;
   }
-  
+
   .slider-overlay p {
     font-size: 1.2rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin-bottom: 1.5rem;
   }
-  
-  .slider-overlay button {
-    padding: 0.8rem 2rem;
-    background-color: #ff6f61;
-    border: none;
-    color: #fff;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    border-radius: 4px; /* Modern button corners */
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
   }
-  
-  .slider-overlay button:hover {
-    background-color: #e05549;
+
+  .primary-btn, .secondary-btn {
+    width: 100%;
+    max-width: 250px;
+    margin-bottom: 1rem;
   }
-  
-  /* Ensure responsive design */
-  @media (max-width: 768px) {
-    .slider-overlay h1 {
-      font-size: 2.2rem;
-    }
-  
-    .slider-overlay p {
-      font-size: 1rem;
-    }
-  
-    .slider-overlay button {
-      padding: 0.6rem 1.8rem;
-      font-size: 0.9rem;
-    }
-  }
-  
+}

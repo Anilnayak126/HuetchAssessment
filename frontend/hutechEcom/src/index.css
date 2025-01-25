@@ -1,0 +1,39 @@
+/* Global Layout Fixes */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  #root {
+    padding-top: 64px; 
+  }
+  
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    height: 64px; 
+  }
+  
+  /* Ensure page content starts below navbar */
+  .page-content {
+    margin-top: 64px;
+  }
+  
+
+  @media screen and (max-width: 768px) {
+    #root {
+      padding-top: 56px; 
+    }
+  
+    .navbar {
+      height: 56px;
+    }
+  
+    .page-content {
+      margin-top: 56px;
+    }
+  }

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../../Styles/HeroSlider.css"; 
+import "../../Styles/HeroSlider.css";
 
 const HeroSlider = () => {
   const images = [
@@ -12,22 +12,39 @@ const HeroSlider = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      const randomIndex = Math.floor(Math.random() * images.length);
-      setCurrentImage(randomIndex);
-    }, 3000);
+      setCurrentImage((prev) => (prev + 1) % images.length);
+    }, 5000);
 
-    return () => clearInterval(interval); // Clean up interval
+    return () => clearInterval(interval);
   }, [images]);
 
   return (
-    <div className="hero-slider">
-      <div className="slider-image">
-        <img src={images[currentImage]} alt="Hero Banner" />
-      </div>
-      <div className="slider-overlay">
-        <h1>Welcome to Our Store</h1>
-        <p>Discover amazing products at unbeatable prices.</p>
-        <button>Shop Now</button>
+    <div className="hero-slider-container">
+      {images.map((image, index) => (
+        <div 
+          key={index} 
+          className={`hero-slide ${index === currentImage ? 'active' : ''}`}
+          style={{ backgroundImage: `url(${image})` }}
+        >
+          <div className="slider-overlay">
+            <h1>Discover Your Style</h1>
+            <p>Explore Trendy Collections & Unbeatable Deals</p>
+            <div className="cta-buttons">
+              <button className="primary-btn">Shop Now</button>
+              <button className="secondary-btn">Explore Collections</button>
+            </div>
+          </div>
+        </div>
+      ))}
+      
+      <div className="slider-indicators">
+        {images.map((_, index) => (
+          <span 
+            key={index} 
+            className={`indicator ${index === currentImage ? 'active' : ''}`}
+            onClick={() => setCurrentImage(index)}
+          ></span>
+        ))}
       </div>
     </div>
   );
