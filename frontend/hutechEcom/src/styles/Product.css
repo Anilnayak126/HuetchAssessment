@@ -1,0 +1,129 @@
+/* Basic styles for product listing */
+.products-container {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+  }
+  
+  .products-heading {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+  }
+  
+  .product-card {
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+  }
+  
+  .product-image {
+    width: 100%;
+    height: 200px; /* Fixed height to ensure consistent image sizes */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+  }
+  
+  .product-details {
+    padding: 20px;
+  }
+  
+  .product-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .product-description {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .product-price {
+    font-size: 1.2rem;
+    color: #000;
+    margin: 10px 0;
+  }
+  
+  .quantity-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+  }
+  
+  .quantity-input {
+    width: 50px;
+    margin-left: 10px;
+    padding: 5px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .add-to-cart-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+  }
+  
+  .add-to-cart-btn:hover {
+    background-color: #45a049;
+  }
+  
+  .view-cart-btn {
+    background-color: #008CBA;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    display: block;
+    margin: 20px auto;
+    width: 150px;
+  }
+  
+  .view-cart-btn:hover {
+    background-color: #007bb5;
+  }
+  
+  /* Responsiveness */
+  @media (max-width: 768px) {
+    .products-heading {
+      font-size: 1.5rem;
+    }
+  
+    .product-card {
+      max-width: 100%;
+    }
+  
+    .quantity-input {
+      width: 40px;
+    }
+  
+    .add-to-cart-btn, .view-cart-btn {
+      width: 100%;
+      font-size: 1.2rem;
+    }
+  
+    .product-image {
+      height: 250px; /* Adjust image height on smaller screens */
+    }
+  }
+  

@@ -1,0 +1,91 @@
+/* Hero Slider Styles */
+.hero-slider {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333; /* Add a fallback background color */
+   
+  }
+  
+  .slider-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    animation: fadeIn 3s ease-in-out infinite;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  .slider-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.4); /* Transparent black overlay */
+    padding: 20px;
+    border-radius: 8px; /* Modern rounded edges */
+  }
+  
+  .slider-overlay h1 {
+    font-size: 3rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 1rem;
+    font-weight: bold;
+  }
+  
+  .slider-overlay p {
+    font-size: 1.2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 1.5rem;
+  }
+  
+  .slider-overlay button {
+    padding: 0.8rem 2rem;
+    background-color: #ff6f61;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 4px; /* Modern button corners */
+  }
+  
+  .slider-overlay button:hover {
+    background-color: #e05549;
+  }
+  
+  /* Ensure responsive design */
+  @media (max-width: 768px) {
+    .slider-overlay h1 {
+      font-size: 2.2rem;
+    }
+  
+    .slider-overlay p {
+      font-size: 1rem;
+    }
+  
+    .slider-overlay button {
+      padding: 0.6rem 1.8rem;
+      font-size: 0.9rem;
+    }
+  }
+  

@@ -1,0 +1,47 @@
+/* Confirmation Page Styles */
+.confirmation-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px;
+    text-align: center;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .confirmation-container h3 {
+    font-size: 2rem;
+    color: #28a745; /* Success color */
+  }
+  
+  .confirmation-details {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    color: #333;
+  }
+  
+  .confirmation-details h4 {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  .confirmation-details p {
+    margin-top: 5px;
+  }
+  
+  .back-button {
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    margin-top: 30px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .back-button:hover {
+    background-color: #0056b3;
+  }
+  

@@ -1,0 +1,46 @@
+/* Checkout Page Styles */
+.checkout-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .payment-methods {
+    margin: 20px 0;
+  }
+  
+  .payment-button {
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    margin: 10px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .payment-button:hover {
+    background-color: #45a049;
+  }
+  
+  .payment-summary {
+    margin-top: 20px;
+  }
+  
+  .pay-button {
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .pay-button:hover {
+    background-color: #0b7dda;
+  }
+  
